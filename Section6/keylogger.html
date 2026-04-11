@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Keylogger Demo</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 30px;
+        }
+        input {
+            padding: 10px;
+            width: 300px;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid black;
+            width: 300px;
+            min-height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Keylogger Demonstration</h2>
+
+<!-- Input field -->
+<input type="text" id="inputBox" placeholder="Type something here...">
+
+<!-- Display captured keys -->
+<div id="output"></div>
+
+<script>
+    let capturedKeys = "";
+
+    // Capture key presses
+    document.getElementById("inputBox").addEventListener("keypress", function(event) {
+        capturedKeys += event.key;
+        document.getElementById("output").innerText = capturedKeys;
+    });
+</script>
+
+</body>
+</html>
+
+<!--
+==================== SECURITY COMMENTS ====================
+
+1. This script captures every key typed by the user.
+2. In real attacks, keyloggers can record sensitive data like passwords.
+3. Attackers may send this data to a remote server without user knowledge.
+4. This demonstrates a major privacy and security risk.
+5. To prevent this:
+   - Use secure input handling
+   - Avoid untrusted scripts
+   - Use browser security features
+
+NOTE: This is for educational purposes only.
+
+===========================================================
+-->
